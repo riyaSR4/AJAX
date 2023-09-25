@@ -6,6 +6,8 @@ function makePromiseCall(methodType, url, async = true, data = null){
             console.log(methodType+"State Change Called. Ready State: "+
             xhr.readyState+"Status:"+xhr.status);
             if(xhr.status.toString().match('^[2][0-9]{2}$')){
+                resolve(xhr.responseText);
+            }else if(xhr.status.toString().match('^[4,5][0-9]{2}$')){
                 reject({
                     status: xhr.status,
                     statusText: xhr.statusText
