@@ -20,17 +20,17 @@ function makeAJAXCall(methodType, url, callback, async = true, data = null) {
     } else xhr.send();
     console.log(methodType + " request sent to the server");
 }
-const getURL = "";
+const getURL = "http://127.0.0.1:3000/employees/1";
 function getUserDetails(data) {
     console.log("Get User Data: " + data);
 }
 makeAJAXCall("GET", getURL, getUserDetails);
-const deleteURL = " http://localhost:3000/employee/4";
+const deleteURL = "http://localhost:3000/employees/4";
 function userDeleted(data) {
     console.log("User Deleted " + data);
 }
 makeAJAXCall("DELETE", deleteURL, userDeleted, false);
-const postURL = " http://localhost:3000/employee";
+const postURL = "http://localhost:3000/employees";
 const emplData = { "name": "Harry", "Salary": "5000" };
 function userAdded(data) {
     console.log("User Added: " + data)

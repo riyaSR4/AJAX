@@ -24,21 +24,21 @@ function makePromiseCall(methodType, url, async = true, data = null) {
         console.log(methodType + " request sent to the server");
     });
 }
-const getURL = "";
+const getURL = " http://127.0.0.1:3000/employees/1";
 makePromiseCall("GET", getURL, true)
     .then(responseText => {
         console.log("Get User Data: " + responseText)
     })
     .catch(error => console.log("GET Error Status: " +
         JSON.stringify(error)));
-const deleteURL = " http://localhost:3000/employee/4";
+const deleteURL = "http://localhost:3000/employees/4";
 makePromiseCall("DELETE", deleteURL, false)
     .then(responseText => {
         console.log("User Deleted: " + responseText)
     })
     .catch(error => console.log("DELETE Error Status: " +
         JSON.stringify(error)));
-const postURL = " http://localhost:3000/employee";
+const postURL = "http://localhost:3000/employees";
 const emplData = { "name": "Harry", "Salary": "5000" };
 makePromiseCall("POST", postURL, true, emplData)
     .then(responseText => {
